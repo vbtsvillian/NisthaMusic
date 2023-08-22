@@ -139,7 +139,7 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
     font4 = ImageFont.truetype(r'resource/Mukta-ExtraBold.ttf', 35)
 
     image4 = ImageDraw.Draw(image2)
-    image4.text((10, 10), "NISTHA MUSIC", fill="white", font = font1, align ="left") 
+    image4.text((10, 10), "VILLIAN MUSIC", fill="white", font = font1, align ="left") 
     image4.text((670, 150), "NOW PLAYING", fill="white", font = font2, stroke_width=2, stroke_fill="white", align ="left") 
 
     # title
@@ -170,7 +170,7 @@ async def play(_, message: Message):
     global que
     global useer
     
-    lel = await message.reply("**🔎 sᴇᴀʀᴄʜɪɴɢ...**")
+    lel = await message.reply("**🔎 𝑺𝑬𝑨𝑹𝑪𝑯𝑰𝑵𝑮...**")
    
     bsdk = message.from_user.mention
 
@@ -192,24 +192,24 @@ async def play(_, message: Message):
                     invitelink = await _.export_chat_invite_link(chid)
                 except:
                     await lel.edit(
-                        "**» ᴀᴅᴅ ᴍᴇ ᴀs ᴀᴅᴍɪɴ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ ғɪʀsᴛ.**")
+                        "**» 𝘼𝘿𝘿 𝙈𝙀 𝘼𝘿𝙈𝙄𝙉 𝙄𝙉 𝙔𝙊𝙐𝙍 𝙂𝙍𝙊𝙐𝙋 𝙁𝙄𝙍𝙎𝙏.**")
                     return
 
                 try:
                     await USER.join_chat(invitelink)
                     await USER.send_message(
-                        message.chat.id, "** ✅ ᴀssɪsᴛᴀɴᴛ ᴊᴏɪɴᴇᴅ ᴛʜɪs ɢʀᴏᴜᴘ ғᴏʀ ᴘʟᴀʏ ᴍᴜsɪᴄ.**")
+                        message.chat.id, "** ✅ 𝑨𝑺𝑺𝑰𝑺𝑻𝑨𝑵𝑻 𝑱𝑶𝑰𝑵𝑬𝑫 𝑻𝑯𝑰𝑺 𝑮𝑹𝑶𝑼𝑷 𝑭𝑶𝑹 𝑷𝑳𝑨𝒀 𝑴𝑼𝑺𝑰𝑪.**")
 
                 except UserAlreadyParticipant:
                     pass
                 except Exception:
                     await lel.edit(
-                        f"**ᴘʟᴇᴀsᴇ ᴍᴀɴᴜᴀʟʟʏ ᴀᴅᴅ ᴀssɪsᴛᴀɴᴛ ᴏʀ ᴄᴏɴᴛᴀᴄᴛ [sᴜᴍɪᴛ ʏᴀᴅᴀᴠ](https://t.me/{OWNER_USERNAME})** ")
+                        f"**𝑷𝑳𝑬𝑨𝑺𝑬 𝑴𝑨𝑵𝑼𝑨𝑳𝑳𝒀 𝑨𝑫𝑫 𝑨𝑺𝑺𝑰𝑺𝑻𝑨𝑵𝑻 𝑶𝑹 𝑪𝑶𝑵𝑻𝑨𝑪𝑻 [𝙑𝙄𝙇𝙇𝙄𝘼𝙉 𝙈𝙐𝙎𝙄𝘾](https://t.me/{OWNER_USERNAME})** ")
     try:
         await USER.get_chat(chid)
     except:
         await lel.edit(
-            f"**ᴘʟᴇᴀsᴇ ᴍᴀɴᴜᴀʟʟʏ ᴀᴅᴅ ᴀssɪsᴛᴀɴᴛ ᴏʀ ᴄᴏɴᴛᴀᴄᴛ [sᴜᴍɪᴛ ʏᴀᴅᴀᴠ](https://t.me/{OWNER_USERNAME})*")
+            f"**𝑷𝑳𝑬𝑨𝑺𝑬 𝑴𝑨𝑵𝑼𝑨𝑳𝑳𝒀 𝑨𝑫𝑫 𝑨𝑺𝑺𝑰𝑺𝑻𝑨𝑵𝑻 𝑶𝑹 𝑪𝑶𝑵𝑻𝑨𝑪𝑻 [𝙑𝙄𝙇𝙇𝙄𝘼𝙉 𝙈𝙐𝙎𝙄𝘾](https://t.me/{OWNER_USERNAME})*")
         return
     
     audio = (
@@ -222,7 +222,7 @@ async def play(_, message: Message):
     if audio:
         if round(audio.duration / 60) > DURATION_LIMIT:
             raise DurationLimitError(
-                f"**» sᴏɴɢ ʟᴏɴɢᴇʀ ᴛʜᴀɴ {DURATION_LIMIT} ᴍɪɴᴜᴛᴇ's ᴀʀᴇ ɴᴏᴛ ᴀʟʟᴏᴡᴇᴅ ᴛᴏ ᴘʟᴀʏ.**"
+                f"**» 𝑺𝑶𝑵𝑮 𝑳𝑶𝑵𝑮𝑬𝑹 𝑻𝑯𝑨𝑵 {DURATION_LIMIT} 𝑴𝑰𝑵𝑼𝑻𝑬'𝑺 𝑨𝑹𝑬 𝑵𝑶𝑻 𝑨𝑳𝑳𝑶𝑾𝑬𝑫 𝑻𝑶 𝑷𝑳𝑨𝒀.**"
             )
 
         file_name = get_file_name(audio)
@@ -235,10 +235,10 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
              [
             [
-                InlineKeyboardButton(text=" sᴜᴘᴘᴏʀᴛ ", url=f"https://t.me/{SUPPORT_GROUP}"),
-                InlineKeyboardButton(text=" ᴜᴘᴅᴀᴛᴇs ", url=f"https://t.me/{UPDATE_CHANNEL}"),
+                InlineKeyboardButton(text=" 𝙎𝙪𝙥𝙥𝙤𝙧𝙩 ", url=f"https://t.me/{SUPPORT_GROUP}"),
+                InlineKeyboardButton(text=" 𝙐𝙥𝙙𝙖𝙩𝙚𝙨 ", url=f"https://t.me/{UPDATE_CHANNEL}"),
             ],
-            [   InlineKeyboardButton(text=" ᴄʟᴏsᴇ ", callback_data="close_play")
+            [   InlineKeyboardButton(text=" 𝑪𝑳𝑶𝑺𝑬 ", callback_data="close_play")
             ]
         ]
     )
@@ -274,10 +274,10 @@ async def play(_, message: Message):
             keyboard = InlineKeyboardMarkup(
              [
             [
-                InlineKeyboardButton(text=" sᴜᴘᴘᴏʀᴛ ", url=f"https://t.me/{SUPPORT_GROUP}"),
-                InlineKeyboardButton(text=" ᴜᴘᴅᴀᴛᴇs ", url=f"https://t.me/{UPDATE_CHANNEL}"),
+                InlineKeyboardButton(text=" 𝙎𝙪𝙥𝙥𝙤𝙧𝙩 ", url=f"https://t.me/{SUPPORT_GROUP}"),
+                InlineKeyboardButton(text=" 𝙐𝙥𝙙𝙖𝙩𝙚𝙨 ", url=f"https://t.me/{UPDATE_CHANNEL}"),
             ],
-            [   InlineKeyboardButton(text=" ᴄʟᴏsᴇ ", callback_data="close_play")
+            [   InlineKeyboardButton(text=" 𝑪𝑳𝑶𝑺𝑬 ", callback_data="close_play")
             ]
         ]
     )
@@ -289,17 +289,17 @@ async def play(_, message: Message):
             keyboard = InlineKeyboardMarkup(
              [
             [
-                InlineKeyboardButton(text=" sᴜᴘᴘᴏʀᴛ ", url=f"https://t.me/{SUPPORT_GROUP}"),
-                InlineKeyboardButton(text=" ᴜᴘᴅᴀᴛᴇs ", url=f"https://t.me/{UPDATE_CHANNEL}"),
+                InlineKeyboardButton(text=" 𝙎𝙪𝙥𝙥𝙤𝙧𝙩 ", url=f"https://t.me/{SUPPORT_GROUP}"),
+                InlineKeyboardButton(text=" 𝙐𝙥𝙙𝙖𝙩𝙚𝙨 ", url=f"https://t.me/{UPDATE_CHANNEL}"),
             ],
-            [   InlineKeyboardButton(text=" ᴄʟᴏsᴇ ", callback_data="close_play")
+            [   InlineKeyboardButton(text=" 𝑪𝑳𝑶𝑺𝑬 ", callback_data="close_play")
             ]
         ]
     )
 
         if (dur / 60) > DURATION_LIMIT:
             await lel.edit(
-                f"**» sᴏɴɢ ʟᴏɴɢᴇʀ ᴛʜᴀɴ {DURATION_LIMIT} ᴍɪɴᴜᴛᴇ's ᴀʀᴇ ɴᴏᴛ ᴀʟʟᴏᴡᴇᴅ ᴛᴏ ᴘʟᴀʏ.**"
+                f"**» 𝑺𝑶𝑵𝑮 𝑳𝑶𝑵𝑮𝑬𝑹 𝑻𝑯𝑨𝑵 {DURATION_LIMIT} 𝑴𝑰𝑵𝑼𝑻𝑬'𝑺 𝑨𝑹𝑬 𝑵𝑶𝑻 𝑨𝑳𝑳𝑶𝑾𝑬𝑫 𝑻𝑶 𝑷𝑳𝑨𝒀.**"
             )
             return
         requested_by = message.from_user.first_name
@@ -309,10 +309,10 @@ async def play(_, message: Message):
         if len(message.command) < 2:
             await message.reply_photo(
                      photo=f"https://te.legra.ph/file/71bdd6e8c353398a4034a.jpg",
-                     caption="💌 **ᴜsᴀɢᴇ: /play ɢɪᴠᴇ ᴀ ᴛɪᴛʟᴇ sᴏɴɢ ᴛᴏ ᴘʟᴀʏ ᴍᴜsɪᴄ**"
+                     caption="💌 **𝑼𝑺𝑨𝑮𝑬: /play 𝑮𝑰𝑽𝑬 𝑨 𝑻𝑰𝑻𝑳𝑬 𝑺𝑶𝑵𝑮 𝑻𝑶 𝑷𝑳𝑨𝒀 𝑴𝑼𝑺𝑰𝑪**"
                     
             )
-        await lel.edit("**⇆ ᴘʀᴏᴄᴇssɪɴɢ.**")
+        await lel.edit("**⇆ 𝑷𝑹𝑶𝑪𝑬𝑺𝑺𝑰𝑵𝑮.**")
         query = message.text.split(None, 1)[1]
         # print(query)
         try:
@@ -337,7 +337,7 @@ async def play(_, message: Message):
 
         except Exception as e:
             await lel.edit(
-                "**» ɴᴏᴛ ғᴏᴜɴᴅ, ᴛʀʏ sᴇᴀʀᴄʜɪɴɢ ᴡɪᴛʜ ᴛʜᴇ sᴏɴɢ ɴᴀᴍᴇ.**"
+                "**» 𝑵𝑶𝑻 𝑭𝑶𝑼𝑵𝑫, 𝑻𝑹𝒀 𝑺𝑬𝑨𝑹𝑪𝑯𝑰𝑵𝑮 𝑾𝑰𝑻𝑯 𝑻𝑯𝑬 𝑺𝑶𝑵𝑮 𝑵𝑨𝑴𝑬.**"
             )
             print(str(e))
             return
@@ -345,16 +345,16 @@ async def play(_, message: Message):
         keyboard = InlineKeyboardMarkup(
              [
             [
-                InlineKeyboardButton(text=" sᴜᴘᴘᴏʀᴛ ", url=f"https://t.me/{SUPPORT_GROUP}"),
-                InlineKeyboardButton(text=" ᴜᴘᴅᴀᴛᴇs ", url=f"https://t.me/{UPDATE_CHANNEL}"),
+                InlineKeyboardButton(text=" 𝙎𝙪𝙥𝙥𝙤𝙧𝙩 ", url=f"https://t.me/{SUPPORT_GROUP}"),
+                InlineKeyboardButton(text=" 𝙐𝙥𝙙𝙖𝙩𝙚𝙨 ", url=f"https://t.me/{UPDATE_CHANNEL}"),
             ],
-            [   InlineKeyboardButton(text=" ᴄʟᴏsᴇ ", callback_data="close_play")
+            [   InlineKeyboardButton(text=" 𝑪𝑳𝑶𝑺𝑬 ", callback_data="close_play")
             ]
         ]
     )
         if (dur / 60) > DURATION_LIMIT:
             await lel.edit(
-                f"**» sᴏɴɢ ʟᴏɴɢᴇʀ ᴛʜᴀɴ {DURATION_LIMIT} ᴍɪɴᴜᴛᴇ's ᴀʀᴇ ɴᴏᴛ ᴀʟʟᴏᴡᴇᴅ ᴛᴏ ᴘʟᴀʏ.**"
+                f"**» 𝑺𝑶𝑵𝑮 𝑳𝑶𝑵𝑮𝑬𝑹 𝑻𝑯𝑨𝑵 {DURATION_LIMIT} 𝑴𝑰𝑵𝑼𝑻𝑬'𝑺 𝑨𝑹𝑬 𝑵𝑶𝑻 𝑨𝑳𝑳𝑶𝑾𝑬𝑫 𝑻𝑶 𝑷𝑳𝑨𝒀.**"
             )
             return
         requested_by = message.from_user.first_name
@@ -368,7 +368,7 @@ async def play(_, message: Message):
         position = await queues.put(chat_id, file=file_path)
         await message.reply_photo(
             photo="final.png",
-            caption=f"**➻ ᴛʀᴀᴄᴋ ᴀᴅᴅᴇᴅ ᴛᴏ ϙᴜᴇᴜᴇ » {position} **\n\n​ 🍒**ɴᴀᴍᴇ :**[{title[:65]}]({url})\n⏰ ** ᴅᴜʀᴀᴛɪᴏɴ :** `{duration}` **ᴍɪɴᴜᴛᴇs**\n👀 ** ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ​ : **{bsdk}",
+            caption=f"**➻ 𝑇𝑅𝐴𝐶𝐾 𝐴𝐷𝐷𝐸𝐷 𝑇𝑂 𝑄𝑈𝐸𝑈𝐸 » {position} **\n\n​ 🍒**𝑁𝐴𝑀𝐸 :**[{title[:65]}]({url})\n⏰ ** 𝐷𝑈𝑅𝐴𝑇𝐼𝑂𝑁 :** `{duration}` **𝑀𝐼𝑁𝑈𝑇𝐸𝑆**\n👀 ** 𝑅𝐸𝑄𝑈𝐸𝑆𝑇𝐸𝐷 𝐵𝑌 : **{bsdk}",
             reply_markup=keyboard,
         )
     else:
@@ -385,7 +385,7 @@ async def play(_, message: Message):
         await message.reply_photo(
             photo="final.png",
             reply_markup=keyboard,
-            caption=f"**➻ ꜱᴛᴀʀᴛᴇᴅ ꜱᴛʀᴇᴀᴍɪɴɢ\n\n🍒 ɴᴀᴍᴇ : **[{title[:65]}]({url})\n⏰ **ᴅᴜʀᴀᴛɪᴏɴ :** `{duration}` ᴍɪɴᴜᴛᴇs\n👀 **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ ​:** {bsdk}\n",
+            caption=f"**➻ 𝑆𝑇𝐴𝑅𝑇𝐸𝐷 𝑆𝑇𝑅𝐸𝐴𝑀𝐼𝑁𝐺\n\n🍒 𝑁𝐴𝑀𝐸 : **[{title[:65]}]({url})\n⏰ **𝐷𝑈𝑅𝐴𝑇𝐼𝑂𝑁 :** `{duration}` 𝑀𝐼𝑁𝑈𝑇𝐸𝑆\n👀 **𝑅𝐸𝑄𝑈𝐸𝑆𝑇𝐸𝐷 𝐵𝑌 ​:** {bsdk}\n",
            )
 
     os.remove("final.png")
@@ -397,7 +397,7 @@ async def play(_, message: Message):
 @authorized_users_only
 async def pause(_, message: Message):
     await clientbot.pytgcalls.pause_stream(message.chat.id)
-    await message.reply_text("**» ᴍᴜsɪᴄ ᴘʟᴀʏᴇʀ ɴᴏᴛʜɪɴɢ ɪs ᴘʟᴀʏɪɴɢ.**")
+    await message.reply_text("**» 𝑀𝑈𝑆𝐼𝐶 𝑃𝐿𝐴𝑌𝐸𝑅 𝑁𝑂𝑇𝐻𝐼𝑁𝐺 𝐼𝑆 𝑃𝐿𝐴𝑌𝐼𝑁𝐺.**")
     
 
 
@@ -406,7 +406,7 @@ async def pause(_, message: Message):
 @authorized_users_only
 async def resume(_, message: Message):
     await clientbot.pytgcalls.resume_stream(message.chat.id)
-    await message.reply_text("**» ᴍᴜsɪᴄ ᴘʟᴀʏᴇʀ sᴜᴄᴄᴇsғᴜʟʟʏ ʀᴇsᴜᴍᴇᴅ.**")
+    await message.reply_text("**» 𝑀𝑈𝑆𝐼𝐶 𝑃𝐿𝐴𝑌𝐸𝑅 𝑆𝑈𝐶𝐶𝐸𝑆𝑆𝐹𝑈𝐿𝐿𝑌 𝑅𝐸𝑆𝑈𝑀𝐸𝐷.**")
     
     
 
@@ -420,7 +420,7 @@ async def skip(_, message: Message):
     for x in clientbot.pytgcalls.active_calls:
         ACTV_CALLS.append(int(x.chat_id))
     if int(chat_id) not in ACTV_CALLS:
-        await message.reply_text("**» ᴍᴜsɪᴄ ᴘʟᴀʏᴇʀ ɴᴏᴛʜɪɴɢ ɪs ᴘʟᴀʏɪɴɢ ᴛᴏ sᴋɪᴘ.**")
+        await message.reply_text("**» 𝑀𝑈𝑆𝐼𝐶 𝑃𝐿𝐴𝑌𝐸𝑅 𝑁𝑂𝑇𝐻𝐼𝑁𝐺 𝐼𝑆 𝑃𝐿𝐴𝑌𝐼𝑁𝐺 𝑇𝑂 𝑆𝐾𝐼𝑃.**")
         
     else:
         queues.task_done(chat_id)
@@ -438,7 +438,7 @@ async def skip(_, message: Message):
             )
 
 
-    await message.reply_text("**» ᴍᴜsɪᴄ ᴘʟᴀʏᴇʀ sᴋɪᴘᴘᴇᴅ ᴛʜᴇ sᴏɴɢ.**")
+    await message.reply_text("**» 𝑀𝑈𝑆𝐼𝐶 𝑃𝐿𝐴𝑌𝐸𝑅 𝑆𝐾𝐼𝑃𝑃𝐸𝐷 𝑇𝐻𝐸 𝑆𝑂𝑁𝐺.**")
     
 
 
@@ -452,7 +452,7 @@ async def stop(_, message: Message):
         pass
 
     await clientbot.pytgcalls.leave_group_call(message.chat.id)
-    await message.reply_text("**» ᴍᴜsɪᴄ ᴘʟᴀʏᴇʀ ɴᴏᴛʜɪɴɢ ɪs sᴛʀᴇᴀᴍɪɴɢ.**")
+    await message.reply_text("**» 𝑀𝑈𝑆𝐼𝐶 𝑃𝐿𝐴𝑌𝐸𝑅 𝑁𝑂𝑇𝐻𝐼𝑁𝐺 𝐼𝑆 𝑆𝑇𝑅𝐸𝐴𝑀𝐼𝑁𝐺.**")
     
 
 @Client.on_message(filters.command(["reload", "refresh"], prefixes=["/", "!"]))
@@ -469,5 +469,5 @@ async def admincache(client, message: Message):
 
     await message.reply_photo(
                               photo="https://telegra.ph/file/fa8358cbb060a1b92339a.jpg",
-                              caption="**✅ ʙᴏᴛ ʀᴇʟᴏᴀᴅᴇᴅ ᴄᴏʀʀᴇᴄᴛʟʏ !\n✅ ᴀᴅᴍɪɴ ʟɪsᴛ ʜᴀs ᴜᴘᴅᴀᴛᴇᴅ !**")
+                              caption="**✅ 𝐵𝑂𝑇 𝑅𝐸𝐿𝑂𝐴𝐷𝐸𝐷 𝐶𝑂𝑅𝑅𝐸𝐶𝑇𝐿𝑌 !\n✅ 𝐴𝐷𝑀𝐼𝑁 𝐿𝐼𝑆𝑇 𝐻𝐴𝑆 𝑈𝑃𝐷𝐴𝑇𝐸𝐷 !**")
                                

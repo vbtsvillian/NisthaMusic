@@ -33,7 +33,7 @@ async def edit_or_reply(msg: Message, **kwargs):
 @sudo_users_only
 async def executor(client, message):
     if len(message.command) < 2:
-        return await edit_or_reply(message, text=" ɢɪᴠᴇ sᴏᴍᴇ ᴛᴇxᴛ sᴏ ɪ ᴡɪʟʟ ᴛʀʏ ᴛᴏ ᴇxᴇᴄᴜᴛᴇ ɪᴛ.")
+        return await edit_or_reply(message, text=" 𝐺𝐼𝑉𝐸 𝑆𝑂𝑀𝐸 𝑇𝐸𝑋𝑇 𝑆𝑂 𝐼 𝑊𝐼𝐿𝐿 𝑇𝑅𝑌 𝑇𝑂 𝐸𝑋𝐸𝐶𝑈𝑇𝐸 𝐼𝑇.")
     try:
         cmd = message.text.split(" ", maxsplit=1)[1]
     except IndexError:
@@ -61,7 +61,7 @@ async def executor(client, message):
         evaluation = stdout
     else:
         evaluation = "Success"
-    final_output = f"**ᴏᴜᴛᴩᴜᴛ**:\n\n```{evaluation.strip()}```"
+    final_output = f"**𝑂𝑈𝑇𝑃𝑈𝑇**:\n\n```{evaluation.strip()}```"
     if len(final_output) > 4096:
         filename = "output.txt"
         with open(filename, "w+", encoding="utf8") as out_file:
@@ -78,7 +78,7 @@ async def executor(client, message):
         )
         await message.reply_document(
             document=filename,
-            caption=f"**ɪɴᴩᴜᴛ:**\n`{cmd[0:980]}`\n\n**ᴏᴜᴛᴩᴜᴛ:**\n`ᴀᴛᴛᴀᴄʜᴇᴅ ᴅᴏᴄᴜᴍᴇɴᴛ`",
+            caption=f"**𝐼𝑁𝑃𝑈𝑇:**\n`{cmd[0:980]}`\n\n**𝑂𝑈𝑇𝑃𝑈𝑇:**\n`𝐴𝑇𝑇𝐴𝐶𝐻𝐸𝐷 𝐷𝑂𝐶𝑈𝑀𝐸𝑁𝑇`",
             quote=False,
             reply_markup=keyboard,
         )
@@ -123,7 +123,7 @@ async def shellrunner(client, message):
                 )
             except Exception as err:
                 print(err)
-                await edit_or_reply(message, text=f"**ᴇʀʀᴏʀ:**\n```{err}```")
+                await edit_or_reply(message, text=f"**𝐸𝑅𝑅𝑂𝑅:**\n```{err}```")
             output += f"**{code}**\n"
             output += process.stdout.read()[:-1].decode("utf-8")
             output += "\n"
@@ -146,7 +146,7 @@ async def shellrunner(client, message):
                 tb=exc_tb,
             )
             return await edit_or_reply(
-                message, text=f"**ᴇʀʀᴏʀ:**\n\n```{''.join(errors)}```"
+                message, text=f"**𝐸𝑅𝑅𝑂𝑅:**\n\n```{''.join(errors)}```"
             )
         output = process.stdout.read()[:-1].decode("utf-8")
     if str(output) == "\n":
@@ -159,9 +159,9 @@ async def shellrunner(client, message):
                 message.chat.id,
                 "output.txt",
                 reply_to_message_id=message.message_id,
-                caption="`ᴏᴜᴛᴩᴜᴛ`",
+                caption="`𝑂𝑈𝑇𝑃𝑈𝑇`",
             )
             return os.remove("output.txt")
-        await edit_or_reply(message, text=f"**ᴏᴜᴛᴩᴜᴛ:**\n\n```{output}```")
+        await edit_or_reply(message, text=f"**𝑂𝑈𝑇𝑃𝑈𝑇:**\n\n```{output}```")
     else:
-        await edit_or_reply(message, text="**ᴏᴜᴛᴩᴜᴛ: **\n`No output`")
+        await edit_or_reply(message, text="**𝑂𝑈𝑇𝑃𝑈𝑇: **\n`No output`")

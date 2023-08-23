@@ -51,15 +51,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
     if query.data=="home":
         buttons = [
         [
-            InlineKeyboardButton("➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
+            InlineKeyboardButton("🌷𝑨𝒅𝒅 𝑴𝒆 𝑻𝒐 𝒀𝒐𝒖𝒓 𝑮𝒓𝒐𝒖𝒑🌷", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
         ],
         [
-            InlineKeyboardButton("🍂 sᴜᴘᴘᴏʀᴛ", url="https://t.me/{SUPPORT_GROUP}"),
-            InlineKeyboardButton("🌾 ᴜᴘᴅᴀᴛᴇs", url="https://t.me/{UPDATE_CHANNEL}")
+            InlineKeyboardButton("🥀 𝙎𝙪𝙥𝙥𝙤𝙧𝙩 💥", url="https://t.me/{SUPPORT_GROUP}"),
+            InlineKeyboardButton("🥀 𝙐𝙥𝙙𝙖𝙩𝙚𝙨 💥", url="https://t.me/{UPDATE_CHANNEL}")
         ],
         [
-            InlineKeyboardButton("🧰 ᴄᴏᴍᴍᴀɴᴅs", callback_data="help_cmd"),
-            InlineKeyboardButton("🎓 ᴍᴀɪɴᴛᴀɪɴᴇʀ", url="https://t.me/{OWNER_USERNAME}"),
+            InlineKeyboardButton("💖 𝘾𝙤𝙢𝙢𝙖𝙣𝙙𝙨 💖", callback_data="help_cmd"),
+            InlineKeyboardButton("👑 𝙈𝙖𝙞𝙣𝙩𝙖𝙞𝙣𝙚𝙧", url="https://t.me/{OWNER_USERNAME}"),
         ]
    
      ]
@@ -79,14 +79,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [
                 [
                     InlineKeyboardButton(
-                        "🌾 sᴜᴅᴏ ᴄᴍᴅ ", callback_data="sudo_users"),
+                        "💖 𝑺𝑼𝑫𝑶 𝑪𝑴𝑫 💖", callback_data="sudo_users"),
                     InlineKeyboardButton(
-                        "🍃 ᴜsᴇʀs ᴄᴍᴅ", callback_data="users_cmd"),
+                        "🌷 𝑼𝑺𝑬𝑹𝑺 𝑪𝑴𝑫 🌷", callback_data="users_cmd"),
                 ],
                 [
                     InlineKeyboardButton(
-                        "🎓 ᴍᴀɪɴᴛᴀɪɴᴇʀ", url="https://t.me/{OWNER_USERNAME}"),
-                    InlineKeyboardButton("⟲ ʙᴀᴄᴋ ⟳", callback_data="home")
+                        "👑 𝙈𝙖𝙞𝙣𝙩𝙖𝙞𝙣𝙚𝙧", url="https://t.me/{OWNER_USERNAME}"),
+                    InlineKeyboardButton("⟲ 𝑩𝑨𝑪𝑲 ⟳", callback_data="home")
                 ]
            ]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -105,7 +105,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data=="users_cmd":
         buttons =  [              
                 [
-                    InlineKeyboardButton("⟲ ʙᴀᴄᴋ ⟳", callback_data="help_cmd")
+                    InlineKeyboardButton("⟲ 𝑩𝑨𝑪𝑲 ⟳", callback_data="help_cmd")
                 ]
            ]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -121,7 +121,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data=="sudo_users":
         buttons =  [              
                 [
-                    InlineKeyboardButton("⟲ ʙᴀᴄᴋ ⟳", callback_data="help_cmd")
+                    InlineKeyboardButton("⟲ 𝑩𝑨𝑪𝑲 ⟳", callback_data="help_cmd")
                 ]
            ]
         reply_markup = InlineKeyboardMarkup(buttons)
